@@ -2,6 +2,8 @@ import java.util.Properties
 import groovy.lang.MissingPropertyException
 
 plugins {
+    kotlin("jvm") version "1.9.25"
+    java
     `kotlin-dsl`
 }
 
@@ -26,7 +28,9 @@ val javaVersion = try {
 }
 
 kotlin {
-    jvmToolchain(javaVersion.toInt())
+    jvmToolchain {
+        languageVersion.set(JavaLanguageVersion.of(javaVersion.toInt()))
+    }
 }
 
 dependencies {

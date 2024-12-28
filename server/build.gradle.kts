@@ -81,7 +81,7 @@ tasks.register<Exec>("fixFilePermissions") {
     // When running on macOS or Linux the start script
     // needs executable permissions to run.
 
-    onlyIf { !System.getProperty("os.name").lowercase().contains("windows") }
+    onlyIf { !System.getProperty("os.name").toLowerCase().contains("windows") }
     commandLine("chmod", "+x", "${tasks.installDist.get().destinationDir}/bin/kotlin-language-server")
 }
 

@@ -45,7 +45,7 @@ tasks.register<DetektCreateBaselineTask>("createDetektBaseline") {
 }
 
 tasks.withType<Detekt>().configureEach {
-    jvmTarget = JavaVersion.VERSION_11.toString()
+    jvmTarget = JavaVersion.VERSION_17.toString()
     exclude("**/build/**")
     reports {
         html.required.set(true)
